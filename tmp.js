@@ -87,10 +87,46 @@ function iPutTheFunIn(string){
 // // PART 5: write a function called split(). it should take two inputs: (1) a string and (2) a delimiter
 
 // // obviously, you may not use the native .split() method. your task here is to reverse-engineer .split() and write your own. 
+// function contains(val,seq){
+//     for (var i = 0; i < seq.length; i ++){
+//         if (seq[i] === val){
+//             return true
+//         }
+//     }
+//     return false
+// }
 
+// function split (string, delimiter){
+//     var newArray = []
+//     for (var i=0; i<string.length; i++){
+//         var x = 0
+//         if (contains(delimiter,string[i])===true){
+//             newArray.push(string.substring(x,i))
+//         }
+//         x=i+1
+//     }
+//     var arrayLength = newArray.length-1
+//     return newArray[arrayLength]
+// }
+
+// log(split("pear,apple,plum,orange",","))
 
 // // PART 6: write a function called pipeline(). it should take three inputs: (1) a starting value, (2) a function, and (3) another function. it should use functions (2) and (3) on the starting value, one after the other, and return a new value that has been processed by both function (2) and function (3).
+function addOne(number){
+    return number + 1
+}
 
+function divideByTen(number){
+    return number/10
+}
+
+function pipeline(startingValue, function1, function2){
+    if (typeof(function1) === "function" && typeof(function2)==="function"){
+        var result1 = function1(startingValue)
+        var result2 = function2(result1)
+    }
+    return result2
+}
 // // visit test.js to see the tests that will be run against your code.
 
 
